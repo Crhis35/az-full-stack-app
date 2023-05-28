@@ -1,0 +1,10 @@
+query listTask($input: ListTaskInput!) {
+  listTask(input: $input) {
+    ok
+    totalPages
+    totalResults
+    items {
+      ...TaskFields
+    }
+  }
+}

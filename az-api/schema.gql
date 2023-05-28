@@ -1,0 +1,56 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Task {
+  id: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  description: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type ListTaskOutput {
+  error: String
+  ok: Boolean!
+  totalPages: Int
+  totalResults: Int
+  items: [Task!]
+}
+
+type CreateTaskOutput {
+  error: String
+  ok: Boolean!
+  item: Task
+}
+
+type DeleteTaskOutput {
+  error: String
+  ok: Boolean!
+}
+
+type Query {
+  listTask(input: ListTaskInput): ListTaskOutput!
+}
+
+input ListTaskInput {
+  limit: Int! = 100
+  offset: Int! = 1
+}
+
+type Mutation {
+  createTask(input: CreateTaskInput!): CreateTaskOutput!
+  deleteTask(input: DeleteTaskInput!): DeleteTaskOutput!
+}
+
+input CreateTaskInput {
+  description: String!
+}
+
+input DeleteTaskInput {
+  id: String! = "b05e649e-33d4-4cf3-a580-5edd848cf42b"
+}

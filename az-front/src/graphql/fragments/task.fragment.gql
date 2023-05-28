@@ -1,0 +1,6 @@
+fragment TaskFields on Task {
+  id
+description
+  createdAt
+  updatedAt
+}

@@ -1,0 +1,15 @@
+mutation createTask($input: CreateTaskInput!) {
+  createTask(input: $input) {
+    ok
+    item {
+      ...TaskFields
+    }
+  }
+}
+
+mutation deleteTask($input: DeleteTaskInput!) {
+  deleteTask(input: $input){
+    ok
+    error
+  }
+}
